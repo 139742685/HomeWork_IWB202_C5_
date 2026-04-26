@@ -1,0 +1,199 @@
+.navbar {
+    background-color: #333; 
+    padding: 15px 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.nav-links {
+    list-style: none; 
+    margin: 0; 
+    padding: 0;
+    display: flex; 
+    justify-content: center; 
+}
+
+
+.nav-links li {
+    margin: 0 20px; 
+}
+
+
+.nav-links li a {
+    text-decoration: none; 
+    color: white; 
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s; 
+}
+
+
+.nav-links li a:hover {
+    color: #ff9800; 
+}
+
+
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    direction: rtl; 
+    font-family: Arial, sans-serif;
+}
+
+
+.custom-table {
+    border-collapse: collapse; 
+    width: 80%;
+    max-width: 800px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.custom-table thead tr {
+    background-color: #333; 
+    color: white;
+    text-align: right;
+}
+
+.custom-table th, 
+.custom-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #f5f5f5;
+    transition: 0.3s;
+}
+
+
+.my-link {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    direction: rtl;
+}
+
+
+.p-publish-link {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.my-link a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+/* About Us */
+.AboutUsText {
+    list-style: none;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    line-height: 30px;
+}
+
+.continue-btn{
+    background: #333;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.details-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+#meals-page .custom-table tbody tr:nth-child(even) {
+    display: none;
+}
+
+#meals-page .custom-table tbody tr.show-details {
+    display: table-row;
+}
+
+
+
+#order-form-container h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+}
+
+#order-form .form-group {
+    margin: 15px 0;
+    text-align: right;
+}
+
+#order-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+#order-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+#order-form input:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.3);
+}
+
+
+
+#order-form .form-buttons {
+    text-align: center;
+    margin-top: 25px;
+}
+
+
+
+/* error message */
+.error-message {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group.error input {
+    border-color: #d32f2f;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
