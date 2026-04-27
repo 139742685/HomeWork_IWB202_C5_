@@ -91,7 +91,7 @@ $(document).ready(function() {
             message += '- ' + meal.name + ': ' + meal.price + '\n';
         });
         
-        message += '\nالمجموع الفرعي: ' + totalPrice + '\n';
+        message += '\nالمجموع: ' + totalPrice + '\n';
         message += 'الضريبة (5%): ' + tax.toFixed(2) + '\n';
         message += 'المبلغ الإجمالي: ' + finalPrice.toFixed(2);
         
