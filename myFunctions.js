@@ -24,7 +24,6 @@ $(document).ready(function() {
     $('#order-form').submit(function(e) {
         e.preventDefault();
         
-        // Clear all previous error messages and error classes
         $('.error-message').text('');
         $('.form-group').removeClass('error');
         
@@ -35,7 +34,6 @@ $(document).ready(function() {
         var birthDate = $('#birth-date').val();
         var hasError = false;
         
-        // التحقق من الرقم الوطني
         if (!nationalId) {
             $('#national-id-error').text('الرجاء إدخال الرقم الوطني');
             $('#national-id').closest('.form-group').addClass('error');
@@ -54,7 +52,6 @@ $(document).ready(function() {
             }
         }
         
-        // التحقق من جميع الحقول الإلزامية
         if (!fullName) {
             $('#full-name-error').text('الرجاء إدخال الاسم الكامل');
             $('#full-name').closest('.form-group').addClass('error');
@@ -65,7 +62,6 @@ $(document).ready(function() {
             hasError = true;
         }
         
-        // التحقق من رقم الموبايل
         if (!mobile) {
             $('#mobile-error').text('الرجاء إدخال رقم الموبايل');
             $('#mobile').closest('.form-group').addClass('error');
@@ -76,7 +72,6 @@ $(document).ready(function() {
             hasError = true;
         }
         
-        // التحقق من الإيميل
         if (!email) {
             $('#email-error').text('الرجاء إدخال الإيميل');
             $('#email').closest('.form-group').addClass('error');
@@ -87,13 +82,12 @@ $(document).ready(function() {
             hasError = true;
         }
         
-        // التحقق من تاريخ الميلاد
         if (!birthDate) {
             $('#birth-date-error').text('الرجاء إدخال تاريخ الميلاد');
             $('#birth-date').closest('.form-group').addClass('error');
             hasError = true;
-        } else if (!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(birthDate)) {
-            $('#birth-date-error').text('التاريخ يجب أن يكون بالشكل yyyy-mm-dd');
+        } else if (!/^[0-9]{2}-[0-9]{2}-[0-9]{4}$/.test(birthDate)) {
+            $('#birth-date-error').text('التاريخ يجب أن يكون بالشكل dd-mm-yyyy');
             $('#birth-date').closest('.form-group').addClass('error');
             hasError = true;
         }
