@@ -206,3 +206,9 @@
 .form-group.error .error-message {
     display: block;
 }
+
+.foodImage {
+    width : 200px;
+    height : 250px;
+    float : left;
+}
