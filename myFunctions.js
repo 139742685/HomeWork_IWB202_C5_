@@ -52,44 +52,57 @@ $(document).ready(function() {
             }
         }
         
-        if (!fullName) {
-            $('#full-name-error').text('الرجاء إدخال الاسم الكامل');
-            $('#full-name').closest('.form-group').addClass('error');
-            hasError = true;
-        } else if (!/^[\u0600-\u06FF\s]+$/.test(fullName)) {
+        if (fullName && !/^[\u0600-\u06FF\s]+$/.test(fullName)) {
             $('#full-name-error').text('الرجاء إدخال الاسم بالأحرف العربية فقط');
             $('#full-name').closest('.form-group').addClass('error');
             hasError = true;
         }
         
-        if (!mobile) {
-            $('#mobile-error').text('الرجاء إدخال رقم الموبايل');
-            $('#mobile').closest('.form-group').addClass('error');
-            hasError = true;
-        } else if (!/^09[0-9]{8}$/.test(mobile)) {
+        if (mobile && !/^09[0-9]{8}$/.test(mobile)) {
             $('#mobile-error').text('رقم الموبايل يجب أن يبدأ ب09');
             $('#mobile').closest('.form-group').addClass('error');
             hasError = true;
         }
         
-        if (!email) {
-            $('#email-error').text('الرجاء إدخال الإيميل');
-            $('#email').closest('.form-group').addClass('error');
-            hasError = true;
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             $('#email-error').text('الرجاء إدخال إيميل صحيح');
             $('#email').closest('.form-group').addClass('error');
             hasError = true;
         }
         
-        if (!birthDate) {
-            $('#birth-date-error').text('الرجاء إدخال تاريخ الميلاد');
-            $('#birth-date').closest('.form-group').addClass('error');
-            hasError = true;
-        } else if (!/^[0-9]{2}-[0-9]{2}-[0-9]{4}$/.test(birthDate)) {
-            $('#birth-date-error').text('التاريخ يجب أن يكون بالشكل dd-mm-yyyy');
-            $('#birth-date').closest('.form-group').addClass('error');
-            hasError = true;
+        if (birthDate) {
+            if (!/^[0-9]{2}-[0-9]{2}-[0-9]{4}$/.test(birthDate)) {
+                $('#birth-date-error').text('التاريخ يجب أن يكون بالشكل dd-mm-yyyy');
+                $('#birth-date').closest('.form-group').addClass('error');
+                hasError = true;
+            } else {
+                var parts = birthDate.split('-');
+                var day = parseInt(parts[0], 10);
+                var month = parseInt(parts[1], 10);
+                var year = parseInt(parts[2], 10);
+                
+                if (month < 1 || month > 12) {
+                    $('#birth-date-error').text('الشهر يجب أن يكون بين 1 و 12');
+                    $('#birth-date').closest('.form-group').addClass('error');
+                    hasError = true;
+                } else if (day < 1 || day > 31) {
+                    $('#birth-date-error').text('اليوم يجب أن يكون بين 1 و 31');
+                    $('#birth-date').closest('.form-group').addClass('error');
+                    hasError = true;
+                } else {
+                    var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+                    
+                    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+                        daysInMonth[1] = 29;
+                    }
+                    
+                    if (day > daysInMonth[month - 1]) {
+                        $('#birth-date-error').text('الشهر ' + month + ' لا يحتوي على ' + day + ' يوماً');
+                        $('#birth-date').closest('.form-group').addClass('error');
+                        hasError = true;
+                    }
+                }
+            }
         }
         
         if (hasError) {
