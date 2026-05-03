@@ -1,9 +1,66 @@
+/* تنسيق عام للنصوص - مكان واحد لنوع وحجم الخط */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    direction: rtl;
+}
+
+/* تنسيق عناوين الصفحات */
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #333;
+}
+
+/* تنسيق الفقرات والنصوص */
+p, span, div {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+/* تنسيق عناصر الإدخال النصية من مكان واحد */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+textarea {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    padding: 12px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border-color: #333;
+    background-color: #f9f9f9;
+    outline: none;
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.3);
+}
+
+input[type="text"]:hover,
+input[type="tel"]:hover,
+input[type="email"]:hover,
+input[type="date"]:hover,
+textarea:hover {
+    border-color: #999;
+}
+
 .navbar {
     background-color: #333; 
     padding: 15px 0;
     font-family: Arial, sans-serif;
 }
-
 
 .nav-links {
     list-style: none; 
@@ -13,11 +70,9 @@
     justify-content: center; 
 }
 
-
 .nav-links li {
     margin: 0 20px; 
 }
-
 
 .nav-links li a {
     text-decoration: none; 
@@ -27,12 +82,9 @@
     transition: 0.3s; 
 }
 
-
 .nav-links li a:hover {
     color: #ff9800; 
 }
-
-
 
 .table-container {
     display: flex;
@@ -41,7 +93,6 @@
     direction: rtl; 
     font-family: Arial, sans-serif;
 }
-
 
 .custom-table {
     border-collapse: collapse; 
@@ -70,7 +121,6 @@
     transition: 0.3s;
 }
 
-
 .my-link {
     display: flex;
     justify-content: center; 
@@ -80,8 +130,7 @@
     direction: rtl;
 }
 
-
-.p-publish-link {
+.inedx-text {
     margin: 0;
     font-weight: bold;
     color: #333;
@@ -92,7 +141,6 @@
     font-weight: bold;
     transition: 0.3s;
 }
-
 
 /* About Us */
 .AboutUsText {
@@ -133,7 +181,6 @@
     display: table-row;
 }
 
-
 #order-form-container {
     display: none;
     padding: 40px 20px;
@@ -142,7 +189,6 @@
     margin: 20px auto;
     max-width: 600px;
 }
-
 
 #order-form-container h2 {
     margin-bottom: 25px;
@@ -167,22 +213,7 @@
 
 #order-form input {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
 }
-
-#order-form input:focus {
-    outline: none;
-    border-color: #333;
-    box-shadow: 0 0 5px rgba(51, 51, 51, 0.3);
-}
-
-
 
 #order-form .form-buttons {
     text-align: center;
